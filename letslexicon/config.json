@@ -176,6 +176,5 @@
       "zilore_key": "str?",
       "zonomi_token": "str?"
     }
-  },
-  "image": "troykelly/{arch}-addon-letslexicon"
+  }
 }
