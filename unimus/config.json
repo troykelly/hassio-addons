@@ -1,0 +1,56 @@
+{
+  "name": "Unimus",
+  "version": "0.0.1",
+  "slug": "unimus",
+  "description": "Unimus is a networking equipment configuration management solution",
+  "url": "https://github.com/troykelly/hassio-addon-unimus",
+  "startup": "services",
+  "arch": [
+    "aarch64",
+    "amd64",
+    "armv7",
+    "i386"
+  ],
+  "map": [
+    "ssl",
+    "share"
+  ],
+  "boot": "auto",
+  "hassio_api": true,
+  "auth_api": true,
+  "hassio_role": "default",
+  "ingress": true,
+  "ports": {
+    "8085/tcp": 8085
+  },
+  "options": {
+    "license": {
+      "key": "L-d348ee9a-3525-417b-923d-54cd0008d15"
+    },
+    "encryption": {
+      "key": ""
+    },
+    "database": {
+      "host": "core_mariadb",
+      "port": "3306",
+      "name": "unimus",
+      "user": "unimus",
+      "password": "supersecret"
+    }
+  },
+  "schema": {
+    "license": {
+      "key": "str(38,)"
+    },
+    "encryption": {
+      "key": "str(20,)"
+    },
+    "database": {
+      "host": "str",
+      "port": "port",
+      "name": "str",
+      "user": "str",
+      "password": "str"
+    }
+  }
+}
