@@ -25,21 +25,26 @@ The installation of this add-on is straightforward and easy to do.
 To use this add-on, you need to supply the config for your DNS provider
 
 - Requires you to use one of the supported DNS providers (See "Supported DNS providers" below)
-- Allows to request wildcard certificates (*.yourdomain.com)
+- Allows to request wildcard certificates (`*.example.com`)
 - Doesn’t need you to open a port to your hass.io host on your router.
 
 You always need to provide the following entries within the configuration:
 
 ```json
-  "email": "your@email.com"
-  "domains": "yourdomain.com" /// in case of requesting a wildcard certificate, add "*.yourdomain.com".
+{
+  "email": "your@email.com",
+  "domains": "yourdomain.com"
+}
 ```
 
 ```json
   "dns": {
-    "provider": "" (Add the dns provider of your choice from the list of "Supported DNS providers" below)
+    "provider": ""
   }
 ```
+`provider` is per the list below.
+
+### DNS Provider Credentials
 In addition add the fields according to the credentials required by your dns provider (just add the ones you need - not all):
 
 ```json
