@@ -295,6 +295,6 @@ In case you've found a bug, please [open an issue on our GitHub][issue].
 [armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
 [i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
 [keybase]: https://keybase.io/troykelly
-[forum]: https://community.home-assistant.io
+[forum]: https://community.home-assistant.io/t/lets-encrypt-with-lexicon-dns-certificate-issuance/152084
 [issue]: https://github.com/troykelly/hassio-addons-letsencrypt-lexicon/issues
 [certbot]: https://certbot.eff.org
