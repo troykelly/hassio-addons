@@ -14,7 +14,9 @@
   "startup": "services",
   "boot": "auto",
   "ingress": true,
-  "ingress_port": 8085,  
+  "ingress_port": 8085,
+  "webui": "http://[HOST]:[PORT:8085]",
+  "panel_icon": "mdi:network",
   "ports": {
   },
   "ports_description": {
