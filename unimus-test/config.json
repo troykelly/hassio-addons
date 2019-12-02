@@ -1,0 +1,67 @@
+{
+  "name": "Unimus Test",
+  "version": "0.0.1",
+  "slug": "unimustest",
+  "description": "Unimus makes network automation, disaster recovery, change management and configuration auditing painless and affordable for a network of any size.",
+  "url": "https://github.com/troykelly/hassio-addon-unimus",
+  "arch": [
+    "armhf",
+    "armv7",
+    "aarch64",
+    "amd64",
+    "i386"
+  ],
+  "map": [
+    "ssl:ro"
+  ],
+  "apparmor": false,
+  "startup": "services",
+  "boot": "auto",
+  "ingress": true,
+  "ingress_port": 8099,
+  "webui": "[PROTO:ssl]://[HOST]:[PORT:8099]",
+  "panel_icon": "mdi:network",
+  "panel_title": "Unimus",
+  "ports": {
+    "8099/tcp": 8099
+  },
+  "ports_description": {
+    "8099/tcp": "Web interface (Not required for Hass.io Ingress)"
+  },
+  "options": {
+    "license": {
+      "key": "L-d348ee9a-3525-417b-923d-54cd0008d15"
+    },
+    "encryption": {
+      "key": ""
+    },
+    "database": {
+      "host": "core_mariadb",
+      "port": "3306",
+      "name": "unimus",
+      "user": "unimus",
+      "password": "supersecret"
+    },
+    "ssl": false,
+    "certfile": "fullchain.pem",
+    "keyfile": "privkey.pem"
+  },
+  "schema": {
+    "license": {
+      "key": "str(38,)"
+    },
+    "encryption": {
+      "key": "str(20,)"
+    },
+    "database": {
+      "host": "str",
+      "port": "port",
+      "name": "str",
+      "user": "str",
+      "password": "str"
+    },
+    "ssl": "bool",
+    "certfile": "str",
+    "keyfile": "str"
+  }
+}
