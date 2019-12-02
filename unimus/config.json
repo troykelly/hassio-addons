@@ -12,7 +12,7 @@
     "i386"
   ],
   "startup": "startup",
-  "boot": "manual",
+  "boot": "auto",
   "ports": {
   },
   "ports_description": {
