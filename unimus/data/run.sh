@@ -3,6 +3,7 @@
 UNIMUS_DIR=/data/unimus
 
 mkdir -p "$UNIMUS_DIR"
+mkdir -p /etc/default
 
 LICENSE_KEY=$(bashio::config 'license.key')
 DATABASE_ENCRYPTION_KEY=$(bashio::config 'encryption.key')
