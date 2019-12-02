@@ -1,23 +1,18 @@
 {
   "name": "Unimus",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "slug": "unimus",
   "description": "Unimus is a networking equipment configuration management solution",
   "url": "https://github.com/troykelly/hassio-addon-unimus",
   "startup": "services",
   "arch": [
+    "armhf",
+    "armv7",
     "aarch64",
     "amd64",
-    "armv7",
     "i386"
   ],
-  "map": [
-    "ssl",
-    "share"
-  ],
   "boot": "auto",
-  "hassio_api": true,
-  "auth_api": true,
   "hassio_role": "default",
   "ingress": true,
   "ports": {
@@ -52,5 +47,6 @@
       "user": "str",
       "password": "str"
     }
-  }
+  },
+  "image": "troykelly/{arch}-addon-unimus"
 }
