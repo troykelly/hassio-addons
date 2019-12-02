@@ -11,7 +11,7 @@
     "amd64",
     "i386"
   ],
-  "startup": "startup",
+  "startup": "services",
   "boot": "auto",
   "ports": {
   },
