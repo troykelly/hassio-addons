@@ -18,8 +18,10 @@
   "webui": "http://[HOST]:[PORT:8085]",
   "panel_icon": "mdi:network",
   "ports": {
+    "8085/tcp": 8085
   },
   "ports_description": {
+    "8085/tcp": "Web interface (Not required for Hass.io Ingress)"
   },
   "map": [
     "ssl:rw"
