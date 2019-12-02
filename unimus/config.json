@@ -1,10 +1,9 @@
 {
-  "name": "Unimus",
-  "version": "0.0.4",
+  "name": "Unimus networking equipment configuration management",
+  "version": "0.0.5",
   "slug": "unimus",
-  "description": "Unimus is a networking equipment configuration management solution",
+  "description": "Unimus makes network automation, disaster recovery, change management and configuration auditing painless and affordable for a network of any size.",
   "url": "https://github.com/troykelly/hassio-addon-unimus",
-  "startup": "services",
   "arch": [
     "armhf",
     "armv7",
@@ -12,16 +11,15 @@
     "amd64",
     "i386"
   ],
+  "startup": true,
   "boot": "auto",
-  "hassio_role": "default",
-  "ingress": true,
-  "ingress_port": 8085,
   "ports": {
-    "8085/tcp": 8085
+    "8085/TCP": 8085
   },
   "ports_description": {
-    "8085/tcp": "The web service"
+    "8085/TCP": "Web dashboard server"
   },
+  "apparmor": true,
   "options": {
     "license": {
       "key": "L-d348ee9a-3525-417b-923d-54cd0008d15"
@@ -52,5 +50,9 @@
       "password": "str"
     }
   },
-  "image": "troykelly/{arch}-addon-unimus"
+  "ingress": true,
+  "ingress_port": 8085,
+  "panel_icon": "mdi:network",
+  "panel_title": "Unimus",
+  "image": "troykelly/{arch}-addon-letslexicon"
 }
