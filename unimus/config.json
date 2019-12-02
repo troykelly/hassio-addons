@@ -11,15 +11,18 @@
     "amd64",
     "i386"
   ],
-  "startup": true,
+  "startup": "startup",
   "boot": "auto",
+  "ingress": true,
+  "ingress_port": 8085,
+  "panel_icon": "mdi:network",
+  "panel_title": "Unimus",
   "ports": {
     "8085/TCP": 8085
   },
   "ports_description": {
     "8085/TCP": "Web dashboard server"
   },
-  "apparmor": true,
   "options": {
     "license": {
       "key": "L-d348ee9a-3525-417b-923d-54cd0008d15"
@@ -49,9 +52,5 @@
       "user": "str",
       "password": "str"
     }
-  },
-  "ingress": true,
-  "ingress_port": 8085,
-  "panel_icon": "mdi:network",
-  "panel_title": "Unimus"
+  }
 }
