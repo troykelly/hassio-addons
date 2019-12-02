@@ -17,7 +17,6 @@
   "ingress_port": 8085,
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8085]",
   "panel_icon": "mdi:network",
-  "panel_title": "Unimus",
   "ports": {
     "8085/TCP": 8085
   },
