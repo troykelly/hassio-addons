@@ -1,0 +1,14 @@
+{
+  "name": "Troy Kelly",
+  "version": "0.0.1",
+  "slug": "troykelly",
+  "description": "Testing",
+  "url": "https://github.com/troykelly",
+  "arch": [
+    "armhf",
+    "armv7",
+    "aarch64",
+    "amd64",
+    "i386"
+  ]
+}
