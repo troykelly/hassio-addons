@@ -48,21 +48,20 @@
   },
   "schema": {
     "license": {
-      "key": "str(38,)"
+      "key": "str?"
     },
     "encryption": {
-      "key": "str(20,)"
+      "key": "str?"
     },
     "database": {
-      "host": "str",
-      "port": "port",
-      "name": "str",
-      "user": "str",
-      "password": "str"
+      "host": "str?",
+      "port": "port?",
+      "name": "str?",
+      "user": "str?",
+      "password": "str?"
     },
     "ssl": "bool",
     "certfile": "str",
     "keyfile": "str"
-  },
-  "image": "troykelly/{arch}-addon-unimus"
+  }
 }
