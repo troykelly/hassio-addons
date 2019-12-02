@@ -16,7 +16,7 @@ The generated certificate can be used within others addons.
 The installation of this add-on is straightforward and easy to do.
 
 1. Navigate in your Home Assistant frontend to **Hass.io** -> **Add-on Store**.
-2. Add a new repository by URL `https://github.com/troykelly/hassio-addons`
+2. Add a new repository by URL `https://github.com/troykelly/hassio-addons-letsencrypt-lexicon`
 3. Find the "letslexicon" add-on and click it.
 4. Click on the "INSTALL" button.
 
@@ -25,26 +25,21 @@ The installation of this add-on is straightforward and easy to do.
 To use this add-on, you need to supply the config for your DNS provider
 
 - Requires you to use one of the supported DNS providers (See "Supported DNS providers" below)
-- Allows to request wildcard certificates (`*.example.com`)
+- Allows to request wildcard certificates (*.yourdomain.com)
 - Doesn’t need you to open a port to your hass.io host on your router.
 
 You always need to provide the following entries within the configuration:
 
 ```json
-{
-  "email": "your@email.com",
-  "domains": "yourdomain.com"
-}
+  "email": "your@email.com"
+  "domains": "yourdomain.com" /// in case of requesting a wildcard certificate, add "*.yourdomain.com".
 ```
 
 ```json
   "dns": {
-    "provider": ""
+    "provider": "" (Add the dns provider of your choice from the list of "Supported DNS providers" below)
   }
 ```
-`provider` is per the list below.
-
-### DNS Provider Credentials
 In addition add the fields according to the credentials required by your dns provider (just add the ones you need - not all):
 
 ```json
@@ -295,6 +290,6 @@ In case you've found a bug, please [open an issue on our GitHub][issue].
 [armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
 [i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
 [keybase]: https://keybase.io/troykelly
-[forum]: https://community.home-assistant.io/t/lets-encrypt-with-lexicon-dns-certificate-issuance/152084
+[forum]: https://community.home-assistant.io
 [issue]: https://github.com/troykelly/hassio-addons-letsencrypt-lexicon/issues
 [certbot]: https://certbot.eff.org

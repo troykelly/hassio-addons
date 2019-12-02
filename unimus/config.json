@@ -1,6 +1,6 @@
 {
   "name": "Unimus networking equipment configuration management",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "slug": "unimus",
   "description": "Unimus makes network automation, disaster recovery, change management and configuration auditing painless and affordable for a network of any size.",
   "url": "https://github.com/troykelly/hassio-addon-unimus",
@@ -54,5 +54,5 @@
   "ingress_port": 8085,
   "panel_icon": "mdi:network",
   "panel_title": "Unimus",
-  "image": "troykelly/{arch}-addon-letslexicon"
+  "image": "troykelly/{arch}-addon-unimus"
 }
