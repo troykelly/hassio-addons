@@ -10,7 +10,6 @@ ARG UNIMUS_VERSION
 # Copy data
 COPY data/run.sh /
 COPY data/unimus.properties /etc/unimus/unimus.properties
-COPY data/unimus.default /etc/default/unimus
 
 RUN apk add --no-cache openjdk8 openssl outils-md5
 
