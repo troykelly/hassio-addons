@@ -23,9 +23,6 @@
   "ports_description": {
     "8085/tcp": "Web interface (Not required for Hass.io Ingress)"
   },
-  "map": [
-    "ssl:rw"
-  ],
   "options": {
     "license": {
       "key": "L-d348ee9a-3525-417b-923d-54cd0008d15"
