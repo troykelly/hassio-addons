@@ -14,8 +14,8 @@ COPY data/run.sh /
 COPY data/unimus.properties /etc/unimus/unimus.properties
 
 # Install unimus
-WORKDIR /usr/src/app
-ADD https://unimus.net/download/${UNIMUS_VERSION}/Unimus.jar /usr/src/app/Unimus.jar
+#WORKDIR /usr/src/app
+#ADD https://unimus.net/download/${UNIMUS_VERSION}/Unimus.jar /usr/src/app/Unimus.jar
 
 WORKDIR /
 CMD [ "/run.sh" ]
