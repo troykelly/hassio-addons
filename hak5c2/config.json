@@ -28,7 +28,7 @@
   },
   "ports_description": {
     "8686/tcp": "Web interface (Not required for Hass.io Ingress)",
-    "2022/tcp": "SSH",
+    "2022/tcp": "SSH"
   },
   "options": {
     "license": {
