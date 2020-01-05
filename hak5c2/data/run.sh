@@ -5,16 +5,19 @@ LOGGING=$(bashio::config 'logging')
 SSLCERTFILE=$(bashio::config 'certfile')
 SSLKEYFILE=$(bashio::config 'keyfile')
 C2HOSTNAME=$(bashio::config 'hostname')
+C2DB="/data/c2"
+
+mkdir -p "${C2DB}"
 
 ## Main ##
 if bashio::config.true 'ssl'; then
   SSLPASSWORD=$(date | md5)
   bashio::log.info "Starting Hak5 C2 with SSL on ${C2HOSTNAME}"
-  /usr/src/app/c2_community-linux-64 -https -certFile /ssl/"$SSLCERTFILE" -keyFile /ssl/"$SSLKEYFILE" -hostname "${C2HOSTNAME}" -reverseProxy -reverseProxyPort 443 -listenport 8686 &
+  /usr/src/app/c2_community-linux-64 -db "${C2DB}"/c2.db -https -certFile /ssl/"$SSLCERTFILE" -keyFile /ssl/"$SSLKEYFILE" -hostname "${C2HOSTNAME}" -reverseProxy -reverseProxyPort 443 -listenport 8686 &
   WAIT_PIDS+=($!)
 else
   bashio::log.info "Starting Hak5 C2 on ${C2HOSTNAME}"
-  /usr/src/app/c2_community-linux-64 -hostname "${C2HOSTNAME}" -reverseProxy -reverseProxyPort 80 -listenport 8686 &
+  /usr/src/app/c2_community-linux-64 -db "${C2DB}"/c2.db -hostname "${C2HOSTNAME}" -reverseProxy -reverseProxyPort 80 -listenport 8686 &
   WAIT_PIDS+=($!)
 fi
 
@@ -28,6 +31,7 @@ function stop_hak5c2() {
 trap "stop_hak5c2" SIGTERM SIGHUP
 
 bashio::log.info "C2 ready on ${C2HOSTNAME}"
+sleep 20
 netstat -an
 
 # Wait and hold Add-on running
