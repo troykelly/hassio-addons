@@ -10,11 +10,11 @@ C2HOSTNAME=$(bashio::config 'hostname')
 if bashio::config.true 'ssl'; then
   SSLPASSWORD=$(date | md5)
   bashio::log.info "Starting Hak5 C2 with SSL on ${C2HOSTNAME}"
-  /usr/src/app/c2_community-linux-64 -https -certFile /ssl/"$SSLCERTFILE" -keyFile /ssl/"$SSLKEYFILE" -hostname "${C2HOSTNAME}" -reverseProxy -reverseProxyPort 443 -listenport 8686
+  /usr/src/app/c2_community-linux-64 -https -certFile /ssl/"$SSLCERTFILE" -keyFile /ssl/"$SSLKEYFILE" -hostname "${C2HOSTNAME}" -reverseProxy -reverseProxyPort 443 -listenport 8686 &
   WAIT_PIDS+=($!)
 else
   bashio::log.info "Starting Hak5 C2 on ${C2HOSTNAME}"
-  /usr/src/app/c2_community-linux-64 -hostname "${C2HOSTNAME}" -reverseProxy -reverseProxyPort 80 -listenport 8686
+  /usr/src/app/c2_community-linux-64 -hostname "${C2HOSTNAME}" -reverseProxy -reverseProxyPort 80 -listenport 8686 &
   WAIT_PIDS+=($!)
 fi
 
