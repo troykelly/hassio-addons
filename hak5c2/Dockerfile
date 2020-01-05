@@ -7,7 +7,7 @@ ARG BUILD_ARCH
 # setup base
 ARG C2_VERSION
 
-RUN apk add --no-cache openssl outils-md5
+RUN apk add --no-cache openssl outils-md5 net-tools
 
 # Copy data
 COPY data/run.sh /
