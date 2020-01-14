@@ -30,5 +30,9 @@ function stop_hak5c2() {
 }
 trap "stop_hak5c2" SIGTERM SIGHUP
 
+bashio::log.info "C2 ready on ${C2HOSTNAME}"
+sleep 20
+netstat -an
+
 # Wait and hold Add-on running
 wait "${WAIT_PIDS[@]}"

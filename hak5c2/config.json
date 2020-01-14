@@ -1,6 +1,6 @@
 {
   "name": "Hak5C2",
-  "version": "0.0.13",
+  "version": "0.0.12",
   "slug": "hak5c2",
   "description": "Cloud C² makes it easy for pen testers and IT security teams to deploy and manage fleets of Hak5 gear from a simple cloud dashboard.",
   "url": "https://github.com/troykelly/hassio-addons-hak5c2",
@@ -24,10 +24,12 @@
   "panel_title": "Hak5 C2",
   "ports": {
     "8686/tcp": 8686,
-    "2022/tcp": 2022
+    "2022/tcp": 2022,
+    "443/tcp": 8687
   },
   "ports_description": {
     "8686/tcp": "Web interface (Not required for Hass.io Ingress)",
+    "8687/tcp": "Web SSL interface (Not required for Hass.io Ingress)",
     "2022/tcp": "SSH"
   },
   "options": {
@@ -47,5 +49,6 @@
     "ssl": "bool",
     "certfile": "str?",
     "keyfile": "str?"
-  }
+  },
+  "image": "troykelly/{arch}-addon-hak5c2"  
 }
