@@ -1,6 +1,6 @@
 {
   "name": "Hak5C2",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "slug": "hak5c2",
   "description": "Cloud C² makes it easy for pen testers and IT security teams to deploy and manage fleets of Hak5 gear from a simple cloud dashboard.",
   "url": "https://github.com/troykelly/hassio-addons-hak5c2",
@@ -50,5 +50,5 @@
     "certfile": "str?",
     "keyfile": "str?"
   },
-  "image": "troykelly/{arch}-addon-hak5c2"  
+  "image": "troykelly/{arch}-addon-hak5c2"
 }
