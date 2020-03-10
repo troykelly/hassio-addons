@@ -27,4 +27,4 @@ Temporary Items
 .apdisk
 
 # Home Assistant Test Configs
-test/options.json
+**/test/options.json
