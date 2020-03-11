@@ -73,6 +73,6 @@ In case you've found a bug, please [open an issue on our GitHub][issue].
 [issue]: https://github.com/troykelly/hassio-addons-dahuavto2mqtt/issues
 [source-shield]: https://img.shields.io/badge/version-master-blue.svg
 [source]: https://github.com/elad-bar/Dahua/tree/master
-[release-shield]: https://img.shields.io/badge/version-v1.0.0-blue.svg
-[release]: https://github.com/troykelly/hassio-addons-dahuavto2mqtt/releases/tag/v1.0.0
+[release-shield]: https://img.shields.io/badge/version-v1.0.1-blue.svg
+[release]: https://github.com/troykelly/hassio-addons-dahuavto2mqtt/releases/tag/v1.0.1
 [original-author]: https://github.com/elad-bar/Dahua
