@@ -40,6 +40,7 @@ Add-on configuration:
       "password": "admin"
     },
     "mqtt": {
+      "prefix": "DahuaVTO",
       "host": "core-mosquitto",
       "port": "1883",
       "username": "homeassistant",
@@ -73,6 +74,6 @@ In case you've found a bug, please [open an issue on our GitHub][issue].
 [issue]: https://github.com/troykelly/hassio-addons-dahuavto2mqtt/issues
 [source-shield]: https://img.shields.io/badge/version-master-blue.svg
 [source]: https://github.com/elad-bar/Dahua/tree/master
-[release-shield]: https://img.shields.io/badge/version-v1.0.1-blue.svg
-[release]: https://github.com/troykelly/hassio-addons-dahuavto2mqtt/releases/tag/v1.0.1
+[release-shield]: https://img.shields.io/badge/version-v1.0.2-blue.svg
+[release]: https://github.com/troykelly/hassio-addons-dahuavto2mqtt/releases/tag/v1.0.2
 [original-author]: https://github.com/elad-bar/Dahua
