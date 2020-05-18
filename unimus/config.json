@@ -1,6 +1,6 @@
 {
   "name": "Unimus",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "slug": "unimus",
   "description": "Unimus makes network automation, disaster recovery, change management and configuration auditing painless and affordable for a network of any size.",
   "url": "https://github.com/troykelly/hassio-addon-unimus",
