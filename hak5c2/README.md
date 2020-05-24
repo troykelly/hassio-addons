@@ -35,7 +35,7 @@ The Hass.io Hak5 C2 add-on allows you to run a local C2 server.
 [forum]: https://community.home-assistant.io/c/hass-io
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2020.svg
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
-[release-shield]: https://img.shields.io/badge/version-v0.0.14-blue.svg
-[release]: https://github.com/troykelly/hassio-addons-hak5c2/releases/tag/v0.0.14
-[source-shield]: https://img.shields.io/badge/version-v2.1.2-blue.svg
+[release-shield]: https://img.shields.io/badge/version-v2.2.0-blue.svg
+[release]: https://github.com/troykelly/hassio-addons-hak5c2/releases/tag/v2.2.0
+[source-shield]: https://img.shields.io/badge/version-v2.2.0-blue.svg
 [source]: https://downloads.hak5.org/cloudc2/community
