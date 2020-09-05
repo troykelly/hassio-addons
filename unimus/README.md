@@ -71,8 +71,8 @@ The first time you launch Unimus - you will be taken to the wizard. If you make 
 [forum]: https://community.home-assistant.io/c/hass-io
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2019.svg
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
-[release-shield]: https://img.shields.io/badge/version-v2.0.0-blue.svg
-[release]: https://github.com/troykelly/hassio-addon-unimus/tree/v2.0.0
+[release-shield]: https://img.shields.io/badge/version-v2.0.5-blue.svg
+[release]: https://github.com/troykelly/hassio-addon-unimus/tree/v2.0.5
 [screenshot]: https://unimus.net/images/screenshots/3.png
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg

@@ -5,7 +5,7 @@ LOGGING=$(bashio::config 'logging')
 SSLCERTFILE=$(bashio::config 'certfile')
 SSLKEYFILE=$(bashio::config 'keyfile')
 C2HOSTNAME=$(bashio::config 'hostname')
-HOST_ARCH=$(bashio::homeassistant.arch)
+HOST_ARCH=$(bashio::core.arch)
 C2DB="/data/c2"
 
 mkdir -p "${C2DB}"
