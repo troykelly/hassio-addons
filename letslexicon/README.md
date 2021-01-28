@@ -25,6 +25,8 @@ The installation of this add-on is straightforward and easy to do.
 
 ## How to use
 
+Note: You will need to also set up an automation to update your certificates regularly. See "automations" below.
+
 To use this add-on, you need to supply the config for your DNS provider
 
 - Requires you to use one of the supported DNS providers (See "Supported DNS providers" below)
@@ -271,6 +273,35 @@ zilore
 zonomi
 ```
 
+## Automations
+
+To save on system resources, the container for this addon shuts down on completion. The process will not renew your certificates unless they are nearing expriy, so you can and should check every day, in case for some reason there has been a failure to check.
+
+The service slug for this addon is `99c39c95_letslexicon`.
+
+### Via the UI
+
+Create a time triggered script (to be friendly to Let's Encrypt don't set it "on the hour" - set it for 02:38 for example). The script just needs to call a service, as below:
+
+<img width="608" alt="restart_addon" src="https://user-images.githubusercontent.com/4564803/101269717-d6659a80-37c5-11eb-99c5-31565af45986.png">
+
+
+### Manually creating
+```yaml
+- id: certrenew
+  alias: Check for certificate renewal
+  description: Starts the Let's Lexicon Addon every day
+  trigger:
+  - platform: time
+    at: 03:41
+  condition: []
+  action:
+  - service: hassio.addon_start
+    data:
+      addon: 99c39c95_letslexicon
+  mode: single
+```
+
 ## Known issues and limitations
 
 - I made this in an afternoon because the core Let's Encrypt Add-on didn't support lexicon. Go easy.
@@ -296,7 +327,7 @@ In case you've found a bug, please [open an issue on our GitHub][issue].
 [forum]: https://community.home-assistant.io
 [issue]: https://github.com/troykelly/hassio-addons-letsencrypt-lexicon/issues
 [certbot]: https://certbot.eff.org
-[source-shield]: https://img.shields.io/badge/version-v0.6.5-blue.svg
-[source]: https://github.com/lukas2511/dehydrated/releases/tag/v0.6.5
-[release-shield]: https://img.shields.io/badge/version-v1.0.4-blue.svg
-[release]: https://github.com/troykelly/hassio-addons-letsencrypt-lexicon/releases/tag/v1.0.4
+[source-shield]: https://img.shields.io/badge/version-v0.7.0-blue.svg
+[source]: https://github.com/lukas2511/dehydrated/releases/tag/v0.7.0
+[release-shield]: https://img.shields.io/badge/version-v1.0.5-blue.svg
+[release]: https://github.com/troykelly/hassio-addons-letsencrypt-lexicon/releases/tag/v1.0.5
