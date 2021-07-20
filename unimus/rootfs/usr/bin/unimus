@@ -12,7 +12,7 @@ DATABASE_PORT=$(bashio::config 'database.port')
 DATABASE_NAME=$(bashio::config 'database.name')
 DATABASE_USER=$(bashio::config 'database.user')
 DATABASE_PASSWORD=$(bashio::config 'database.password')
-LOGGING=$(bashio::config 'logging')
+# LOGGING=$(bashio::config 'logging')
 SSLCERTFILE=$(bashio::config 'certfile')
 SSLKEYFILE=$(bashio::config 'keyfile')
 
@@ -22,9 +22,9 @@ if bashio::config.true 'ssl'; then
   SSLPASSWORD=$(date | md5)
   rm -Rf /usr/src/app/Cert.p12
   openssl pkcs12 -export -out /usr/src/app/unimus.keystore.p12 -in /ssl/"$SSLCERTFILE" -inkey /ssl/"$SSLKEYFILE" -name unimus -passout pass:"$SSLPASSWORD"
-  echo "-Dserver.ssl.enabled=true -Dserver.ssl.key-store=/usr/src/app/unimus.keystore.p12 -Dserver.ssl.keyStoreType=PKCS12 -Dserver.ssl.keyAlias=unimus -Dserver.ssl.key-store-password=$SSLPASSWORD -Dserver.port=8099" > /etc/default/unimus
+  echo "-Dserver.ssl.enabled=true -Dserver.ssl.key-store=/usr/src/app/unimus.keystore.p12 -Dserver.ssl.keyStoreType=PKCS12 -Dserver.ssl.keyAlias=unimus -Dserver.ssl.key-store-password=$SSLPASSWORD -Dserver.port=8085" > /etc/default/unimus
 else
-  echo "-Dserver.port=8099" > /etc/default/unimus
+  echo "-Dserver.port=8085" > /etc/default/unimus
 fi
 
 bashio::log.info "Setup Unimus configuration"
@@ -38,7 +38,7 @@ sed -E -i "s/^(#.*)*(database\.password) *= *(.*)$/\2 = $DATABASE_PASSWORD/g" /e
 
 # Start Unimus Server
 bashio::log.info "Starting Unimus system"
-java $(/bin/cat /etc/default/unimus 2> /dev/null) -jar /usr/src/app/Unimus.jar &
+java "$(/bin/cat /etc/default/unimus 2> /dev/null)" -jar /usr/src/app/Unimus.jar &
 WAIT_PIDS+=($!)
 
 # Handling Closing
