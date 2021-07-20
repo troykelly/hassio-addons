@@ -1,7 +1,8 @@
 {
   "name": "Unimus",
-  "version": "dev",
+  "version": "2.0.13",
   "slug": "unimus",
+  "image": "ghcr.io/troykelly/unimus/{arch}",
   "description": "Unimus makes network automation, disaster recovery, change management and configuration auditing painless and affordable for a network of any size.",
   "url": "https://github.com/troykelly/hassio-addon-unimus",
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
