@@ -5,10 +5,12 @@ FROM ${BUILD_FROM}
 # Setup base
 RUN apk add --no-cache \
     coreutils=8.32-r2 \
-    wget=1.21.1-r1 \
+    curl=7.77.0-r1 \
     openjdk8=8.282.08-r1 \
     openssl=1.1.1k-r0 \
-    outils-md5=0.9-r0
+    outils-md5=0.9-r0 \
+    procps=3.3.17-r0 \
+    wget=1.21.1-r1
 
 # Build arguments
 ARG BUILD_ARCH
@@ -25,7 +27,9 @@ ARG UNIMUS_VERSION=-%20Latest
 COPY rootfs /
 
 # Install Unimis Java executable
-ADD https://unimus.net/download/${UNIMUS_VERSION}/Unimus.jar /usr/src/app/Unimus.jar
+# ADD https://unimus.net/download/${UNIMUS_VERSION}/Unimus.jar /usr/src/app/Unimus.jar
+RUN mkdir -p /usr/src/app && \
+    curl -Lvvv -o /usr/src/app/Unimus.jar https://unimus.net/download/${UNIMUS_VERSION}/Unimus.jar
 
 # Labels
 LABEL \
