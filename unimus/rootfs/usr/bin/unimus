@@ -22,7 +22,7 @@ if bashio::config.true 'ssl'; then
   SSLPASSWORD=$(date | md5)
   rm -Rf /usr/src/app/Cert.p12
   openssl pkcs12 -export -out /usr/src/app/unimus.keystore.p12 -in /ssl/"$SSLCERTFILE" -inkey /ssl/"$SSLKEYFILE" -name unimus -passout pass:"$SSLPASSWORD"
-  echo "-Dserver.ssl.enabled=true -Dserver.ssl.key-store=/usr/src/app/unimus.keystore.p12 -Dserver.ssl.keyStoreType=PKCS12 -Dserver.ssl.keyAlias=unimus -Dserver.ssl.key-store-password=$SSLPASSWORD -Dserver.port=8085" > /etc/default/unimus
+  echo "-Dserver.ssl.key-store=/usr/src/app/unimus.keystore.p12 -Dserver.ssl.keyStoreType=PKCS12 -Dserver.ssl.keyAlias=unimus -Dserver.ssl.key-store-password=$SSLPASSWORD -Dserver.port=8085" > /etc/default/unimus
 else
   echo "-Dserver.port=8085" > /etc/default/unimus
 fi

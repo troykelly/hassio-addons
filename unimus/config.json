@@ -12,9 +12,11 @@
   "panel_icon": "mdi:network",
   "panel_title": "Unimus",
   "ports": {
+    "5509/tcp": 5509,
     "8085/tcp": 8085
   },
   "ports_description": {
+    "5509/tcp": "Core connection port",
     "8085/tcp": "Web interface"
   },
   "tmpfs": true,
