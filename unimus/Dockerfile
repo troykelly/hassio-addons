@@ -2,9 +2,6 @@ ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:10.0.0
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
-# Copy root filesystem
-COPY rootfs /
-
 # Setup base
 RUN apk add --no-cache \
     coreutils=8.32-r2 \
@@ -23,6 +20,12 @@ ARG BUILD_REPOSITORY
 ARG BUILD_VERSION
 
 ARG UNIMUS_VERSION=-%20Latest
+
+# Copy root filesystem
+COPY rootfs /
+
+# Install Unimis Java executable
+ADD https://unimus.net/download/${UNIMUS_VERSION}/Unimus.jar /usr/src/app/Unimus.jar
 
 # Labels
 LABEL \
@@ -43,10 +46,3 @@ LABEL \
     org.opencontainers.image.created=${BUILD_DATE} \
     org.opencontainers.image.revision=${BUILD_REF} \
     org.opencontainers.image.version=${BUILD_VERSION}
-
-# Install unimus
-WORKDIR /usr/src/app
-ADD https://unimus.net/download/${UNIMUS_VERSION}/Unimus.jar /usr/src/app/Unimus.jar
-
-WORKDIR /
-CMD [ "/usr/bin/unimus" ]
