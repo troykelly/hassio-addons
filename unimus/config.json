@@ -8,7 +8,7 @@
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
   "map": ["ssl:ro"],
   "startup": "services",
-  "webui": "[PROTO:ssl]://[HOST]:[PORT:8099]/",
+  "webui": "[PROTO:ssl]://[HOST]:[PORT:8085]/",
   "panel_icon": "mdi:network",
   "panel_title": "Unimus",
   "ports": {
