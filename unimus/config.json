@@ -1,6 +1,6 @@
 {
   "name": "Unimus",
-  "version": "2.0.13",
+  "version": "dev",
   "slug": "unimus",
   "image": "ghcr.io/troykelly/unimus/{arch}",
   "description": "Unimus makes network automation, disaster recovery, change management and configuration auditing painless and affordable for a network of any size.",

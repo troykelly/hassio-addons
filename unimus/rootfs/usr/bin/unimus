@@ -36,6 +36,10 @@ sed -E -i "s/^(#.*)*(database\.name) *= *(.*)$/\2 = $DATABASE_NAME/g" /etc/unimu
 sed -E -i "s/^(#.*)*(database\.user) *= *(.*)$/\2 = $DATABASE_USER/g" /etc/unimus/unimus.properties
 sed -E -i "s/^(#.*)*(database\.password) *= *(.*)$/\2 = $DATABASE_PASSWORD/g" /etc/unimus/unimus.properties
 
+# Debugging
+bashio::log.info "Currently listening ports"
+lsof -i -P -n | grep LISTEN
+
 # Start Unimus Server
 bashio::log.info "Starting Unimus system"
 java "$(/bin/cat /etc/default/unimus 2> /dev/null)" -jar /usr/src/app/Unimus.jar &
@@ -52,3 +56,4 @@ trap "stop_unimus" SIGTERM SIGHUP
 
 # Wait and hold Add-on running
 wait "${WAIT_PIDS[@]}"
+bashio::log.info "Unimus has exited"
