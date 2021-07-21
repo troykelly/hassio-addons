@@ -1,0 +1,7 @@
+---
+channel: edge
+addons:
+  unimus:
+    repository: troykelly/hassio-addon-unimus
+    target: unimus
+    image: ghcr.io/troykelly/unimus/{arch}
