@@ -1,6 +1,6 @@
 {
   "name": "Unimus",
-  "version": "2.0.13",
+  "version": "v2.0.13",
   "slug": "unimus",
   "image": "ghcr.io/troykelly/unimus/{arch}",
   "description": "Unimus makes network automation, disaster recovery, change management and configuration auditing painless and affordable for a network of any size.",
@@ -22,13 +22,13 @@
   "tmpfs": true,
   "options": {
     "license": {
-      "key": "L-d348ee9a-3525-417b-923d-54cd0008d15"
+      "key": "L-de52e814-386a-4d73-932b-24027a1296eb"
     },
     "encryption": {
       "key": ""
     },
     "database": {
-      "host": "core_mariadb",
+      "host": "core-mariadb",
       "port": "3306",
       "name": "unimus",
       "user": "unimus",

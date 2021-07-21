@@ -14,11 +14,13 @@ DATABASE_PASSWORD=$(bashio::config 'database.password')
 SSLCERTFILE=$(bashio::config 'certfile')
 SSLKEYFILE=$(bashio::config 'keyfile')
 
-CURRENT_PORT_PROCESS=$(/usr/bin/fuser ${UNIMUS_PORT}/tcp)
-if [ -n "${CURRENT_PORT_PROCESS}" ]; then
-  CURRENT_PORT_PROCESS_DATA=$(ps -p 134 -o pid,vsz=MEMORY -o user,group=GROUP -o comm,args=ARGS)
-  bashio::log.info "Unable to start. Port ${UNIMUS_PORT}/tcp is in use."
-  bashio::log.info "Process: ${CURRENT_PORT_PROCESS_DATA}"
+bashio::log.info "Checking ${UNIMUS_PORT}/tcp is not currently in use."
+CURRENT_PORT_PROCESS=$(/usr/bin/fuser "${UNIMUS_PORT}/tcp")
+if bashio::var.has_value "${CURRENT_PORT_PROCESS}"; then
+  bashio::log.red "Unable to start. Port ${UNIMUS_PORT}/tcp is in use by ${CURRENT_PORT_PROCESS}."
+  CURRENT_PORT_PROCESS_DATA=$(ps -p "${CURRENT_PORT_PROCESS}" -o pid,vsz=MEMORY -o user,group=GROUP -o comm,args=ARGS)
+  bashio::log.red "Process: ${CURRENT_PORT_PROCESS_DATA}"
+  bashio::exit.nok "Exiting. Unimus port ${UNIMUS_PORT}/tcp in use."
 fi
 
 # Ensure directories exist

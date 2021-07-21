@@ -29,7 +29,7 @@ COPY rootfs /
 # Install Unimis Java executable
 # ADD https://unimus.net/download/${UNIMUS_VERSION}/Unimus.jar /usr/src/app/Unimus.jar
 RUN mkdir -p /usr/src/app && \
-    curl -Lvvv -o /usr/src/app/Unimus.jar https://unimus.net/download/${UNIMUS_VERSION}/Unimus.jar
+    curl -L -o /usr/src/app/Unimus.jar https://unimus.net/download/${UNIMUS_VERSION}/Unimus.jar
 
 # Labels
 LABEL \
