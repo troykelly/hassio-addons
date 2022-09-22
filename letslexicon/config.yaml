@@ -12,16 +12,15 @@ map:
 - ssl:rw
 name: Let's Encrypt with Lexicon
 options:
-  email: null
-  updatedelay: 30
+  certfile: fullchain.pem
   dns: {}
   domains:
   - null
-  certfile: fullchain.pem
+  email: null
   keyfile: privkey.pem
+  updatedelay: 30
 schema:
   certfile: str
-  updatedelay: int?
   dns:
     aliyun_auth_key_id: str?
     aliyun_auth_secret: str?
@@ -204,6 +203,7 @@ schema:
   - str
   email: email
   keyfile: str
+  updatedelay: int?
 slug: letslexicon
 url: https://github.com/troykelly/hassio-addons-letsencrypt-lexicon/
-version: 3.0.0
+version: 3.0.1
