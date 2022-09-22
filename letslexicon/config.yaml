@@ -13,7 +13,6 @@ map:
 name: Let's Encrypt with Lexicon
 options:
   email: null
-  updatedelay: "30"
   dns: {}
   domains:
   - null
