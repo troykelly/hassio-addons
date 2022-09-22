@@ -12,14 +12,16 @@ map:
 - ssl:rw
 name: Let's Encrypt with Lexicon
 options:
-  certfile: fullchain.pem
+  email: null
+  updatedelay: "30"
   dns: {}
   domains:
   - null
-  email: null
+  certfile: fullchain.pem
   keyfile: privkey.pem
 schema:
   certfile: str
+  updatedelay: int(0, 3600)
   dns:
     aliyun_auth_key_id: str?
     aliyun_auth_secret: str?
