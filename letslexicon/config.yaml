@@ -206,4 +206,4 @@ schema:
   updatedelay: int?
 slug: letslexicon
 url: https://github.com/troykelly/hassio-addons-letsencrypt-lexicon/
-version: 3.0.1
+version: 3.0.2
