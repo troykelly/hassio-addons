@@ -21,7 +21,7 @@ options:
   keyfile: privkey.pem
 schema:
   certfile: str
-  updatedelay: "int(1, 3600)?"
+  updatedelay: int?
   dns:
     aliyun_auth_key_id: str?
     aliyun_auth_secret: str?
