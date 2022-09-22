@@ -18,7 +18,6 @@ options:
   - null
   email: null
   keyfile: privkey.pem
-  updatedelay: 30
 schema:
   certfile: str
   dns:
@@ -203,7 +202,6 @@ schema:
   - str
   email: email
   keyfile: str
-  updatedelay: int(0, 3600)
 slug: letslexicon
 url: https://github.com/troykelly/hassio-addons-letsencrypt-lexicon/
 version: 3.0.0
