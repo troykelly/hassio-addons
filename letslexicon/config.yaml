@@ -1,27 +1,39 @@
-arch:
-- aarch64
-- amd64
-- armhf
-- armv7
-- i386
-codenotary: codenotary@troykelly.com
-description: Manage certificate from Let's Encrypt using Lexicon DNS
-image: ghcr.io/troykelly/letslexicon/{arch}
-init: false
-map:
-- ssl:rw
+---
 name: Let's Encrypt with Lexicon
+version: 3.0.4
+slug: letslexicon
+description: Manage certificate from Let's Encrypt using Lexicon DNS
+url: https://github.com/troykelly/hassio-addons-letsencrypt-lexicon/
+codenotary: codenotary@troykelly.com
+init: false
+image: ghcr.io/troykelly/letslexicon/{arch}
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
+map:
+  - ssl:rw
 options:
-  certfile: fullchain.pem
-  dns: {}
-  domains:
-  - null
-  email: null
-  keyfile: privkey.pem
+  email:
   updatedelay: 30
+  domains:
+    -
+  certfile: fullchain.pem
+  keyfile: privkey.pem
+  dns: {}
 schema:
+  email: email
+  updatedelay: int?
+  domains:
+    - str
   certfile: str
+  keyfile: str
   dns:
+    provider: list(
+      aliyun|aurora|azure|cloudflare|cloudns|cloudxns|conoha|constellix|ddns|digitalocean|dinahosting|directadmin|dnsimple|dnsmadeeasy|dnspark|dnspod|dnsservices|dreamhost|duckdns|dynu|easydns|easyname|euserv|exoscale|flexibleengine|gandi|gehirn|glesys|godaddy|googleclouddns|gransy|gratisdns|henet|hetzner|hostingde|hover|infoblox|infomaniak|internetbs|inwx|joker|linode|linode4|localzone|luadns|memset|misaka|mythicbeasts|namecheap|namecom|namesilo|netcup|nfsn|njalla|nsone|oci|onapp|online|ovh|plesk|pointhq|porkbun|powerdns|rackspace|rage4|rcodezero|route53|safedns|sakuracloud|softlayer|transip|ultradns|valuedomain|vercel|vultr|webgo|wedos|yandex|yandexcloud|zeit|zilore|zonomi)?
+    # Provider specific options
     aliyun_auth_key_id: str?
     aliyun_auth_secret: str?
     aurora_auth_api_key: str?
@@ -66,7 +78,10 @@ schema:
     dnspark_auth_username: str?
     dnspod_auth_token: str?
     dnspod_auth_username: str?
+    dnsservices_auth_password: str?
+    dnsservices_auth_username: str?
     dreamhost_auth_token: str?
+    duckdns_auth_token: str?
     dynu_auth_token: str?
     easydns_auth_token: str?
     easydns_auth_username: str?
@@ -76,6 +91,8 @@ schema:
     euserv_auth_username: str?
     exoscale_auth_key: str?
     exoscale_auth_secret: str?
+    flexibleengine_auth_token: str?
+    flexibleengine_zone_id: str?
     gandi_api_protocol: str?
     gandi_auth_token: str?
     gehirn_auth_secret: str?
@@ -85,7 +102,6 @@ schema:
     godaddy_auth_key: str?
     godaddy_auth_secret: str?
     googleclouddns_auth_service_account_info: str?
-    googleclouddns_specify: str?
     gransy_auth_password: str?
     gransy_auth_username: str?
     gratisdns_auth_password: str?
@@ -95,6 +111,7 @@ schema:
     hetzner_auth_token: str?
     hostingde_auth_token: str?
     hover_auth_password: str?
+    hover_auth_totp_secret: str?
     hover_auth_username: str?
     infoblox_auth_psw: str?
     infoblox_auth_user: str?
@@ -106,8 +123,8 @@ schema:
     inwx_auth_password: str?
     inwx_auth_username: str?
     joker_auth_token: str?
-    linode4_auth_token: str?
     linode_auth_token: str?
+    linode4_auth_token: str?
     localzone_filename: str?
     luadns_auth_token: str?
     luadns_auth_username: str?
@@ -159,7 +176,6 @@ schema:
     powerdns_pdns_disable_notify: str?
     powerdns_pdns_server: str?
     powerdns_pdns_server_id: str?
-    provider: list(aliyun|aurora|azure|cloudflare|cloudns|cloudxns|conoha|constellix|ddns|digitalocean|dinahosting|directadmin|dnsimple|dnsmadeeasy|dnspark|dnspod|dreamhost|dynu|easydns|easyname|euserv|exoscale|gandi|gehirn|glesys|godaddy|googleclouddns|gransy|gratisdns|henet|hetzner|hostingde|hover|infoblox|infomaniak|internetbs|inwx|joker|linode|linode4|localzone|luadns|memset|misaka|mythicbeasts|namecheap|namecom|namesilo|netcup|nfsn|njalla|nsone|oci|onapp|online|ovh|plesk|pointhq|porkbun|powerdns|rackspace|rage4|rcodezero|route53|safedns|sakuracloud|softlayer|transip|ultradns|valuedomain|vercel|vultr|webgo|yandex|yandexcloud|zeit|zilore|zonomi|)?
     rackspace_auth_account: str?
     rackspace_auth_api_key: str?
     rackspace_auth_token: str?
@@ -190,6 +206,8 @@ schema:
     vultr_auth_token: str?
     webgo_auth_password: str?
     webgo_auth_username: str?
+    wedos_auth_pass: str?
+    wedos_auth_username: str?
     yandex_auth_token: str?
     yandexcloud_auth_token: str?
     yandexcloud_cloud_id: str?
@@ -199,11 +217,3 @@ schema:
     zilore_auth_key: str?
     zonomi_auth_entrypoint: str?
     zonomi_auth_token: str?
-  domains:
-  - str
-  email: email
-  keyfile: str
-  updatedelay: int?
-slug: letslexicon
-url: https://github.com/troykelly/hassio-addons-letsencrypt-lexicon/
-version: 3.0.2
