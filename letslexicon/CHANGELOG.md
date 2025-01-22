@@ -52,3 +52,7 @@
 
 ### Changed
 - DNS-Lexicon version
+
+## [3.1.2] - 2025-01-22
+### Changed
+- Force default current version of dns-lexicon because of build pipeline issue
