@@ -297,7 +297,7 @@ dns:
 dns:
   provider: gandi
   gandi_api_protocol: (OPTIONAL) SPECIFY GANDI API PROTOCOL TO USE: RPC (DEFAULT) OR REST
-  gandi_auth_token: SPECIFY GANDI API KEY
+  gandi_auth_token: SPECIFY GANDI API KEY OR PERSONAL ACCESS TOKEN
 ```
 
 ### gehirn
@@ -423,6 +423,14 @@ dns:
   provider: inwx
   inwx_auth_password: SPECIFY PASSWORD FOR AUTHENTICATION
   inwx_auth_username: SPECIFY USERNAME FOR AUTHENTICATION
+```
+
+### ionos
+
+```yaml
+dns:
+  provider: ionos
+  ionos_api_key: IONOS API KEY: PUBLIC PREFIX + PERIOD + KEY PROPER
 ```
 
 ### joker
@@ -640,6 +648,15 @@ dns:
   powerdns_pdns_server_id: SERVER ID TO INTERACT WITH
 ```
 
+### qcloud
+
+```yaml
+dns:
+  provider: qcloud
+  qcloud_secret_id: SPECIFY SECRET_ID FOR AUTHENTICATION
+  qcloud_secret_key: SPECIFY SECRET_KEY FOR AUTHENTICATION
+```
+
 ### rackspace
 
 ```yaml
@@ -667,6 +684,14 @@ dns:
 dns:
   provider: rcodezero
   rcodezero_auth_token: SPECIFY TOKEN FOR AUTHENTICATION
+```
+
+### regfish
+
+```yaml
+dns:
+  provider: regfish
+  regfish_auth_api_key: SPECIFY API KEY FOR AUTHENTICATION
 ```
 
 ### route53
@@ -706,6 +731,14 @@ dns:
   provider: softlayer
   softlayer_auth_api_key: SPECIFY API PRIVATE KEY FOR AUTHENTICATION
   softlayer_auth_username: SPECIFY USERNAME FOR AUTHENTICATION
+```
+
+### timeweb
+
+```yaml
+dns:
+  provider: timeweb
+  timeweb_auth_token: SPECIFY API TOKEN FOR AUTHENTICATION
 ```
 
 ### transip
@@ -812,20 +845,6 @@ dns:
   provider: zonomi
   zonomi_auth_entrypoint: USE ZONOMI OR RIMUHOSTING API
   zonomi_auth_token: SPECIFY TOKEN FOR AUTHENTICATION
-```
-
-## Configuration
-
-Add-on configuration:
-
-```yaml
-email: hello@home-assistant.io
-domains:
-  - home-assistant.io
-dns:
-  provider: dns-cloudflare
-  cloudflare_username: cf@home-assistant.io
-  cloudflare_token: 31242lk3j4ljlfdwsjf0
 ```
 
 ## Supported DNS providers
